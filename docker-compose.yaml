@@ -1,0 +1,13 @@
+version: "2"
+
+services:
+  devcontainer:
+    build: .
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:ro
+    environment:
+      - DISPLAY
+      - AUTH_COOKIE
+    entrypoint: /entrypoint.sh
+    stdin_open: true
+    tty: true
